@@ -799,7 +799,9 @@ class Kernel:
         return function
 
     def import_native_skill_from_directory(
-        self, parent_directory: str, skill_directory_name: str
+        self,
+        parent_directory: str | os.PathLike,
+        skill_directory_name: str | os.PathLike,
     ) -> Dict[str, SKFunctionBase]:
         MODULE_NAME = "native_function"
 
@@ -836,7 +838,9 @@ class Kernel:
         return {}
 
     def import_semantic_skill_from_directory(
-        self, parent_directory: str, skill_directory_name: str
+        self,
+        parent_directory: str | os.PathLike,
+        skill_directory_name: str | os.PathLike,
     ) -> Dict[str, SKFunctionBase]:
         CONFIG_FILE = "config.json"
         PROMPT_FILE = "skprompt.txt"
